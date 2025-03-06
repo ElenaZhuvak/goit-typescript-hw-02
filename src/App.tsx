@@ -9,14 +9,23 @@ import { LoadMoreBtn } from './components/LoadMoreBtn/LoadMoreBtn';
 import toast from 'react-hot-toast';
 import ImageModal from './components/ImageModal/ImageModal';
 
+ export interface Image {
+  id: string;
+  alt_description: string;
+  url: {
+    regular: string,
+    small: string
+  }
+}
+
 const App = () => {
-  const [imageGallery, setImageGallery] = useState([]);
+  const [imageGallery, setImageGallery] = useState<Image[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(null);
-  const [query, setQuery] = useState('');
+  const [isError, setIsError] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>('');
   const [page, setPage] = useState(0);
   const [btnLoadMore, setBtnLoadMore] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<null | Image[]>(null);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   useEffect(() => {
@@ -51,7 +60,7 @@ const App = () => {
     getData();
   }, [query, page]);
 
-  const handleChangeQuery = query => {
+  const handleChangeQuery = (query: string) => {
     if (query === '') {
       setBtnLoadMore(false);
     }
@@ -64,7 +73,7 @@ const App = () => {
     setPage(prev => prev + 1);
   };
 
-  const handleImageClick = image => {
+  const handleImageClick = (image: Image[]) => {
     setSelectedImage(image);
     setIsOpenModal(true);
   };
