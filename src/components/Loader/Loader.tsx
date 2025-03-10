@@ -1,18 +1,16 @@
-import { ThreeDots } from "react-loader-spinner"
+import { BeatLoader } from "react-spinners"
 import css from './Loader.module.css'
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <div className={css.loader}>
-      <ThreeDots
-        visible={true}
-        height="80"
-        width="80"
-        color="#ca4fff"
-        radius="9"
-        ariaLabel="three-dots-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
+      <BeatLoader
+        color="#1134e9"
+        cssOverride={{}}
+        loading
+        margin={4}
+        size={15}
+        speedMultiplier={2.5}
       />
     </div>
   )

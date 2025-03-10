@@ -17,6 +17,12 @@ const customStyles = {
   }
 };
 
+export interface ImageModalProps {
+  image: ;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
 const ImageModal = ({image, isOpen, onClose}) => {
    
   return (
