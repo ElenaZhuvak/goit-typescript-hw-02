@@ -27,6 +27,7 @@ const App = () => {
     const getData = async () => {
       try {
         setIsLoading(true);
+        setBtnLoadMore(false)
         setIsError(false);
         const response = await fetchImageGallery(query, page);
         setImageGallery(prevImages => [...prevImages, ...response.results]);
