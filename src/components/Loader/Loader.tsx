@@ -10,7 +10,7 @@ const Loader: React.FC = () => {
         loading
         margin={4}
         size={15}
-        speedMultiplier={2.5}
+        speedMultiplier={0.5}
       />
     </div>
   )

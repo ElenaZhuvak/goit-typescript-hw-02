@@ -1,12 +1,18 @@
+import { Image } from '../../types';
 import css from './ImageCard.module.css'
 
-const ImageCard = ({image, onClick}) => {
+export interface ImageCardProps {
+  image: Image;
+  onClick: (image: Image) => void;
+}
+
+const ImageCard: React.FC<ImageCardProps>= ({image, onClick}) => {
   return (
       <div className={css.imageCard} >
           
       <img className={css.image} onClick={() => onClick(image)}
         src={image.urls.small}
-        alt={image.description}
+        alt={image.alt_description}
       />
     </div>
   );
