@@ -12,11 +12,14 @@
 .input {
     padding: 6px 8px;
     width: 300px;
+    border-radius: 5px;
+    border: none;
 }
 .btn {
     cursor: pointer;
     border-radius: 5px;
-    border: none;
+    border-style: none;
+    margin-left: 12px;
 }
 .btn:hover {
     background-color: #b4d6f7;
