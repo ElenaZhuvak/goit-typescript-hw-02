@@ -1,12 +1,16 @@
-import { Field, Form, Formik } from "formik"
+import { Field, Form, Formik, FormikHelpers } from "formik"
 import css from './SearchBar.module.css'
+import { FC } from "react";
 
-const SearchBar = ({onSubmit}) => {
+export interface SearchBarProps {
+    onSubmit: (query: string) => void;
+}
+
+const SearchBar : FC<SearchBarProps> = ({onSubmit}) => {
     const initialValues = {
         query: '',
     }
-    const handleSubmit = (values, actions) => {
-        console.log(values)
+    const handleSubmit = (values: typeof initialValues, actions: FormikHelpers<typeof initialValues>) => {
         onSubmit(values.query)
         actions.resetForm()
     }

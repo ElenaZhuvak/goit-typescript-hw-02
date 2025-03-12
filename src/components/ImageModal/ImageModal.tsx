@@ -1,6 +1,7 @@
 import Modal from 'react-modal'
 import css from './ImageModal.module.css'
 import { Image } from '../../types';
+import { FC } from 'react';
 
 const customStyles = {
   content: {
@@ -24,7 +25,7 @@ export interface ImageModalProps {
   onClose: () => void;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({image, isOpen, onClose}) => {
+const ImageModal: FC<ImageModalProps> = ({image, isOpen, onClose}) => {
    
   return (
     <Modal

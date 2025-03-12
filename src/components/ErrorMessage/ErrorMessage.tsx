@@ -1,4 +1,6 @@
-const ErrorMessage: React.FC = () => {
+import { FC } from "react"
+
+const ErrorMessage: FC = () => {
   return (
       <p>Something went wrong</p>
   )

@@ -12,13 +12,13 @@ import { Image } from './types';
 
 const App = () => {
   const [imageGallery, setImageGallery] = useState<Image[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
-  const [page, setPage] = useState(0);
-  const [btnLoadMore, setBtnLoadMore] = useState(false);
+  const [page, setPage] = useState<number>(0);
+  const [btnLoadMore, setBtnLoadMore] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<null | Image>(null);
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (!query) {

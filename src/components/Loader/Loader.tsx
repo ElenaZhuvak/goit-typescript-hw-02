@@ -1,7 +1,8 @@
 import { BeatLoader } from "react-spinners"
 import css from './Loader.module.css'
+import { FC } from "react"
 
-const Loader: React.FC = () => {
+const Loader: FC = () => {
   return (
     <div className={css.loader}>
       <BeatLoader
