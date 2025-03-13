@@ -3,6 +3,8 @@ import css from './ImageModal.module.css'
 import { Image } from '../../types';
 import { FC } from 'react';
 
+Modal.setAppElement('#root');
+
 const customStyles = {
   content: {
     top: '50%',
