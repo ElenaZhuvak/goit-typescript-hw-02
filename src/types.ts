@@ -6,3 +6,7 @@ export interface Image {
       small: string
     }
   }
+  export interface Response {
+    total_pages: number;
+    results: Image[];
+  }

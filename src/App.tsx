@@ -8,7 +8,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import { LoadMoreBtn } from './components/LoadMoreBtn/LoadMoreBtn';
 import toast from 'react-hot-toast';
 import ImageModal from './components/ImageModal/ImageModal';
-import { Image } from './types';
+import { Image, Response } from './types';
 
 const App = () => {
   const [imageGallery, setImageGallery] = useState<Image[]>([]);
@@ -29,7 +29,7 @@ const App = () => {
         setIsLoading(true);
         setBtnLoadMore(false)
         setIsError(false);
-        const response = await fetchImageGallery(query, page);
+        const response: Response = await fetchImageGallery<Response>(query, page);
         setImageGallery(prevImages => [...prevImages, ...response.results]);
 
         if (response.total_pages === page) {
